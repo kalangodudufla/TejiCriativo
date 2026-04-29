@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Projeto | TejiCriativo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="TejiCriativo Logo">
+            <span>TejiCriativo</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Explorar</a>
+            <a href="profile.html" id="nav-profile">Meu Perfil</a>
+        </div>
+    </nav>
+
+    <div class="form-container" style="max-width: 600px;">
+        <h2 style="margin-bottom: 1rem;">Novo Projeto 3D</h2>
+        <p style="color: var(--text-gray); margin-bottom: 2rem;">Compartilhe sua criação com a comunidade.</p>
+        
+        <form id="upload-form">
+            <div class="form-group">
+                <label for="proj-title">Título do Projeto</label>
+                <input type="text" id="proj-title" placeholder="Ex: Vaso Geométrico Minimalista" required>
+            </div>
+            <div class="form-group">
+                <label for="proj-desc">Descrição</label>
+                <textarea id="proj-desc" rows="4" placeholder="Conte um pouco sobre o modelo, configurações de impressão, etc." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="proj-file">Arquivo STL (Máx 20MB)</label>
+                <div style="border: 2px dashed rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; text-align: center; cursor: pointer;" onclick="document.getElementById('proj-file').click()">
+                    <p id="file-name">Clique para selecionar ou arraste o arquivo .stl</p>
+                    <input type="file" id="proj-file" accept=".stl" style="display: none;" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="proj-image">Imagem de Capa (JPG/PNG)</label>
+                <input type="file" id="proj-image" accept="image/*" required>
+            </div>
+            <button type="submit" id="upload-btn" class="btn-primary" style="width: 100%; margin-top: 1rem;">Publicar Projeto</button>
+        </form>
+        
+        <div id="upload-progress" style="display: none; margin-top: 1.5rem;">
+            <div style="width: 100%; background: #25252d; height: 10px; border-radius: 5px; overflow: hidden;">
+                <div id="progress-bar" style="width: 0%; height: 100%; background: var(--neon-green); transition: width 0.3s;"></div>
+            </div>
+            <p id="progress-text" style="text-align: center; margin-top: 0.5rem; font-size: 0.9rem;">Enviando... 0%</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TejiCriativo | Explore Modelos 3D STL</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="TejiCriativo Logo">
+            <span>TejiCriativo</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Explorar</a>
+            <a href="upload.html">Upload</a>
+            <div id="auth-links">
+                <a href="login.html" class="btn-outline">Entrar</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Imprima suas <span style="color: var(--neon-green)">ideias</span>,<br>Crie o <span style="color: var(--purple)">futuro</span>.</h1>
+        <p>A maior plataforma brasileira de compartilhamento de arquivos STL para impressão 3D. Baixe, curta e compartilhe projetos incríveis.</p>
+        <div class="search-bar" style="max-width: 600px; margin: 0 auto; position: relative;">
+            <input type="text" id="search-input" placeholder="Buscar modelos (ex: Articulado, Vaso, Suporte...)" 
+                   style="width: 100%; padding: 1.2rem 2rem; border-radius: 50px; background: var(--card-bg); border: 1px solid var(--purple); color: white; outline: none;">
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h2>Modelos em Destaque</h2>
+            <div class="filters">
+                <select id="sort-filter" style="padding: 0.5rem; background: var(--card-bg); color: white; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <option value="recent">Mais Recentes</option>
+                    <option value="popular">Mais Populares</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="project-grid" id="project-list">
+            <!-- Projetos serão carregados aqui via JS -->
+            <div class="loader-container" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+                <span class="loader"></span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TejiCriativo. Todos os direitos reservados.</p>
+        <div style="margin-top: 1rem; font-size: 0.8rem;">
+            <a href="#">Termos de Uso</a> | <a href="#">Privacidade</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
